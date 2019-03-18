@@ -77,6 +77,7 @@ namespace GenerateEarlyBinding
             componentsQuery.LinkEntities.Add(solutionLink);
             componentsQuery.Criteria.AddCondition(new ConditionExpression("componenttype", ConditionOperator.Equal, 1));
             EntityCollection ComponentsResult = organizationService.RetrieveMultiple(componentsQuery);
+            
             //Get all entities
             RetrieveAllEntitiesRequest AllEntitiesrequest = new RetrieveAllEntitiesRequest()
             {
