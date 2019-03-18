@@ -28,7 +28,7 @@ namespace GenerateEarlyBinding
             try
             {
                 if (args.Length > 0)
-                {//ConfigurationManager.ConnectionStrings["CRMConnectionString"].ConnectionString
+                {
                     string connectionString = "";
                     foreach (string str in args)
                         connectionString += str;
@@ -56,7 +56,8 @@ namespace GenerateEarlyBinding
                             Console.WriteLine("File is located @ above location");
                         }
                     }
-                    catch (Exception ex) {
+                    catch (Exception ex)
+                    {
                         Console.WriteLine(ex.Message);
                     }
                 }
