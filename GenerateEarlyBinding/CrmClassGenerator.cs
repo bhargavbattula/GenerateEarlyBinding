@@ -130,6 +130,9 @@ namespace BigLynx
                 case "Owner":
                     returnString = "EntityReference";
                     break;
+                case "iscustomizable":
+                    returnString = "bool";
+                    break;
             }
             return returnString;
         }
