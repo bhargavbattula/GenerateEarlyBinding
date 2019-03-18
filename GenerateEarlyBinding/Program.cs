@@ -36,17 +36,12 @@ namespace GenerateEarlyBinding
                     {
                         using (_client = new CrmServiceClient(connectionString))
                         {
-                            //Do stuff
                             Console.WriteLine("Connection Established Successfully...");
                             SolutionsList = new EntityCollection();
                             SolutionNumber = 0;
                             CurrentSolution = new Entity();
-
                             RetrieveCRMSolutions(_client);
-
                             var listOfEntitiesMetadata = RetrieveSolutionRelatedEntities(_client);
-
-
                             CrmClassGenerator crmClassGenerator = new CrmClassGenerator();
                             EntityMetadataCollection coll = new EntityMetadataCollection();
                             foreach (EntityMetadata meta in listOfEntitiesMetadata)
