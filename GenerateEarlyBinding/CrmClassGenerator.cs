@@ -64,11 +64,17 @@ namespace BigLynx
                                 w._("throw new Exception(ex.Message);");
                             }
                         }
+                        using (w.B("public string ToJsonString()"))
+                        {
+                            w._("string returnString = string.Empty;");
+                            w._("returnString = new JavaScriptSerializer().Serialize(this);");
+                            w._("return returnString;");
+                        }
                     }
                 }
             }
             string executableLocation = Path.GetDirectoryName(
-    System.Reflection.Assembly.GetExecutingAssembly().Location);
+            System.Reflection.Assembly.GetExecutingAssembly().Location);
             string csLocation = Path.Combine(executableLocation, "Xrm.cs");
             File.WriteAllText(csLocation, w.ToString());
             Console.WriteLine(csLocation);
